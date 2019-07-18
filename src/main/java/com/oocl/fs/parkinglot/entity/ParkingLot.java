@@ -1,6 +1,5 @@
 package com.oocl.fs.parkinglot.entity;
 
-import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -9,7 +8,6 @@ import java.util.List;
 
 @Entity
 @DynamicUpdate
-@DynamicInsert
 public class ParkingLot {
 
     @Id
@@ -26,7 +24,7 @@ public class ParkingLot {
     @Column(nullable = false)
     private String address;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "parkingLotId")
     private List<Order> orders;
 

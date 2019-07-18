@@ -1,18 +1,13 @@
 package com.oocl.fs.parkinglot.entity;
 
-import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.GenericGenerator;
-import org.springframework.data.annotation.CreatedDate;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
+@Table(name = "INFO")
 @Entity
-@DynamicInsert
 @DynamicUpdate
 public class Order {
 
@@ -27,11 +22,12 @@ public class Order {
     @Column(nullable = false)
     private String cardNumber;
 
-    @CreatedDate
     @Column(nullable = false)
-    private Date createTime;
+    private Date createTime = new Date();
 
     private Date leaveTime;
+
+    private Boolean status = true;
 
     public String getId() {
         return id;
@@ -71,5 +67,13 @@ public class Order {
 
     public void setLeaveTime(Date leaveTime) {
         this.leaveTime = leaveTime;
+    }
+
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
     }
 }

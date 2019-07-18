@@ -1,6 +1,8 @@
 package com.oocl.fs.parkinglot.service;
 
+import com.oocl.fs.parkinglot.entity.Order;
 import com.oocl.fs.parkinglot.entity.ParkingLot;
+import com.oocl.fs.parkinglot.repository.OrderRepository;
 import com.oocl.fs.parkinglot.repository.ParkingLotRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -12,6 +14,8 @@ public class ParkingLotService {
 
     @Autowired
     private ParkingLotRepository parkingLotRepository;
+    @Autowired
+    private OrderRepository orderRepository;
 
     public ParkingLot save(ParkingLot parkingLot) {
         return parkingLotRepository.save(parkingLot);
@@ -32,6 +36,16 @@ public class ParkingLotService {
     public ParkingLot update(String id, ParkingLot parkingLot) {
         parkingLot.setId(id);
         return parkingLotRepository.save(parkingLot);
+    }
+
+    public Order parkCar(String parkingLotId, String cardNumber) {
+        ParkingLot parkingLot = parkingLotRepository.getOne(parkingLotId);
+        Order order = new Order();
+        order.setCardNumber(cardNumber);
+        order.setParkingLotName(parkingLot.getName());
+        parkingLot.getOrders().add(order);
+        parkingLotRepository.save(parkingLot);
+        return orderRepository.findByCardNumber(cardNumber);
     }
 
 }
