@@ -1,5 +1,6 @@
 package com.oocl.fs.parkinglot.repository;
 
+import com.oocl.fs.parkinglot.entity.Car;
 import com.oocl.fs.parkinglot.entity.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -20,8 +21,11 @@ class OrderRepositoryTest {
 
     @Test
     void should_return_specify_order_when_find_order_by_card_number() {
+        Car car = new Car();
+        car.setCardNumber("AAAAA");
         Order order = new Order();
-        order.setCardNumber("AAAAA");
+        order.setCar(car);
+        order.setCardNumber(car.getCardNumber());
         order.setParkingLotName("zha");
         orderRepository.save(order);
 

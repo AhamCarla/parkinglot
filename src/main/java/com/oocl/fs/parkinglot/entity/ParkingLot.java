@@ -24,9 +24,14 @@ public class ParkingLot {
     @Column(nullable = false)
     private String address;
 
-    @OneToMany(cascade = CascadeType.PERSIST)
+    @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "parkingLotId")
     private List<Order> orders;
+
+    @OneToMany(cascade = CascadeType.REMOVE)
+    @JoinColumn(name = "parkingLotId")
+    private List<Car> cars;
+
 
     public String getId() {
         return id;
@@ -66,5 +71,17 @@ public class ParkingLot {
 
     public void setOrders(List<Order> orders) {
         this.orders = orders;
+    }
+
+    public List<Car> getCars() {
+        return cars;
+    }
+
+    public void setCars(List<Car> cars) {
+        this.cars = cars;
+    }
+
+    public Boolean isFull() {
+        return cars.size() >= capacity;
     }
 }
