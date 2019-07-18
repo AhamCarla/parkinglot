@@ -72,5 +72,25 @@ class ParkingLotControllerTest {
         result.andExpect(status().isOk());
     }
 
+    @Test
+    void should_return_parking_lot_when_find_by_id() throws Exception {
+        ParkingLot parkingLot = generateParkingLot();
+        when(parkingLotService.findById(any())).thenReturn(parkingLot);
+
+        ResultActions result = mvc.perform(get("/parking-lots/{id}", "AAAA"));
+
+        result.andExpect(status().isOk()).andExpect(jsonPath("$.id", is("AAAA")));
+    }
+
+    @Test
+    void should_return_parking_lot_when_update() throws Exception {
+        ParkingLot parkingLot = generateParkingLot();
+        when(parkingLotService.update(any(), any())).thenReturn(parkingLot);
+
+        ResultActions result = mvc.perform(put("/parking-lots/{id}", "AAAA").content("{}").contentType(MediaType.APPLICATION_JSON));
+
+        result.andExpect(status().isOk()).andExpect(jsonPath("$.id", is("AAAA")));
+    }
+
 
 }

@@ -29,4 +29,14 @@ public class ParkingLotController {
         return ResponseEntity.ok(parkingLotService.findParkingLotPage(page, pageSize));
     }
 
+    @GetMapping("/parking-lots/{id}")
+    public ResponseEntity<ParkingLot> findById(@PathVariable String id) {
+        return ResponseEntity.ok(parkingLotService.findById(id));
+    }
+
+    @PutMapping("/parking-lots/{id}")
+    public ResponseEntity<ParkingLot> update(@PathVariable String id, @RequestBody ParkingLot parkingLot) {
+        return ResponseEntity.ok(parkingLotService.update(id, parkingLot));
+    }
+
 }
