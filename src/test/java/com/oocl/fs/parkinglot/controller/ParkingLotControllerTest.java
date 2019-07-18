@@ -15,6 +15,7 @@ import org.springframework.test.web.servlet.ResultActions;
 import static org.hamcrest.Matchers.is;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -39,13 +40,22 @@ class ParkingLotControllerTest {
     }
 
     @Test
-    void should_return_parkinglot_after_saved_parkinglot() throws Exception {
+    void should_return_parking_lot_after_saved_parking_lot() throws Exception {
         ParkingLot parkingLot = generateParkingLot();
         when(parkingLotService.save(any())).thenReturn(parkingLot);
 
         ResultActions result = mvc.perform(post("/parking-lots").content("{}").contentType(MediaType.APPLICATION_JSON));
 
         result.andExpect(status().isOk()).andExpect(jsonPath("$.id", is("AAAA")));
+    }
+
+    @Test
+    void should_return_status_ok_after_deleted_parking_lot() throws Exception {
+
+        ResultActions result = mvc.perform(delete("/parking-lots/{id}", "AAAA"));
+
+        result.andExpect(status().isOk());
+
     }
 
 

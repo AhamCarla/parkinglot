@@ -742,3 +742,20 @@ Caused by: org.hibernate.tool.schema.spi.SchemaManagementException: Schema-valid
 2019-07-18 16:26:33.632 DEBUG 104512 --- [main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.oocl.fs.parkinglot.entity.ParkingLot@18f55704]
 2019-07-18 16:26:33.682 DEBUG 104512 --- [Thread-2] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@74bada02, started on Thu Jul 18 16:26:31 CST 2019
 2019-07-18 16:26:33.683  INFO 104512 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-18 16:29:12.668  INFO 105456 --- [main] c.o.f.p.c.ParkingLotControllerTest       : Starting ParkingLotControllerTest on ZHA-ITA097-W10 with PID 105456 (started by XUCA6 in C:\Users\XUCA6\Desktop\Workspace\parkinglot)
+2019-07-18 16:29:12.670  INFO 105456 --- [main] c.o.f.p.c.ParkingLotControllerTest       : No active profile set, falling back to default profiles: default
+2019-07-18 16:29:12.697 DEBUG 105456 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@53dbe163
+2019-07-18 16:29:14.122 DEBUG 105456 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-07-18 16:29:14.376  INFO 105456 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-18 16:29:14.392 DEBUG 105456 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2019-07-18 16:29:14.461 DEBUG 105456 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 4 mappings in 'requestMappingHandlerMapping'
+2019-07-18 16:29:14.476 DEBUG 105456 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-07-18 16:29:14.492 DEBUG 105456 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-07-18 16:29:14.621  INFO 105456 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2019-07-18 16:29:14.621  INFO 105456 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2019-07-18 16:29:14.640  INFO 105456 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 18 ms
+2019-07-18 16:29:14.674  INFO 105456 --- [main] c.o.f.p.c.ParkingLotControllerTest       : Started ParkingLotControllerTest in 2.674 seconds (JVM running for 3.945)
+2019-07-18 16:29:14.744 DEBUG 105456 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public org.springframework.http.ResponseEntity com.oocl.fs.parkinglot.controller.ParkingLotController.delete(java.lang.String)
+2019-07-18 16:29:14.813 DEBUG 105456 --- [main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : No match for [*/*], supported: []
+2019-07-18 16:29:14.835 DEBUG 105456 --- [Thread-2] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@53dbe163, started on Thu Jul 18 16:29:12 CST 2019
+2019-07-18 16:29:14.835  INFO 105456 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
