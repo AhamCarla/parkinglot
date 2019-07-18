@@ -4,10 +4,8 @@ import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @DynamicUpdate
@@ -27,6 +25,10 @@ public class ParkingLot {
 
     @Column(nullable = false)
     private String address;
+
+    @OneToMany
+    @JoinColumn(name = "parkingLotId")
+    private List<Order> orders;
 
     public String getId() {
         return id;
@@ -60,4 +62,11 @@ public class ParkingLot {
         this.capacity = capacity;
     }
 
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
+    }
 }
