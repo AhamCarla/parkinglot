@@ -7,16 +7,20 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 
+import java.util.Collections;
+
 import static org.hamcrest.Matchers.is;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -56,6 +60,16 @@ class ParkingLotControllerTest {
 
         result.andExpect(status().isOk());
 
+    }
+
+    @Test
+    void should_return_page_when_find_parking_lot_by_page() throws Exception {
+        Page<ParkingLot> page = new PageImpl<>(Collections.singletonList(generateParkingLot()));
+        when(parkingLotService.findParkingLotPage(anyInt(), anyInt())).thenReturn(page);
+
+        ResultActions result = mvc.perform(get("/parking-lots?page={page}", 1));
+
+        result.andExpect(status().isOk());
     }
 
 

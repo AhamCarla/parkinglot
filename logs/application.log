@@ -759,3 +759,37 @@ Caused by: org.hibernate.tool.schema.spi.SchemaManagementException: Schema-valid
 2019-07-18 16:29:14.813 DEBUG 105456 --- [main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : No match for [*/*], supported: []
 2019-07-18 16:29:14.835 DEBUG 105456 --- [Thread-2] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@53dbe163, started on Thu Jul 18 16:29:12 CST 2019
 2019-07-18 16:29:14.835  INFO 105456 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-18 16:33:54.521  INFO 104492 --- [main] c.o.f.p.c.ParkingLotControllerTest       : Starting ParkingLotControllerTest on ZHA-ITA097-W10 with PID 104492 (started by XUCA6 in C:\Users\XUCA6\Desktop\Workspace\parkinglot)
+2019-07-18 16:33:54.525  INFO 104492 --- [main] c.o.f.p.c.ParkingLotControllerTest       : No active profile set, falling back to default profiles: default
+2019-07-18 16:33:54.550 DEBUG 104492 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@1a6c1270
+2019-07-18 16:33:56.329 DEBUG 104492 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-07-18 16:33:56.610  INFO 104492 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-18 16:33:56.612 DEBUG 104492 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2019-07-18 16:33:56.676 DEBUG 104492 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 5 mappings in 'requestMappingHandlerMapping'
+2019-07-18 16:33:56.692 DEBUG 104492 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-07-18 16:33:56.708 DEBUG 104492 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-07-18 16:33:56.830  INFO 104492 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2019-07-18 16:33:56.830  INFO 104492 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2019-07-18 16:33:56.846  INFO 104492 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 16 ms
+2019-07-18 16:33:56.877  INFO 104492 --- [main] c.o.f.p.c.ParkingLotControllerTest       : Started ParkingLotControllerTest in 2.962 seconds (JVM running for 4.218)
+2019-07-18 16:33:56.953  WARN 104492 --- [main] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.bind.UnsatisfiedServletRequestParameterException: Parameter conditions "page, pageSize" not met for actual request parameters: page={1}]
+2019-07-18 16:33:57.003 DEBUG 104492 --- [Thread-2] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@1a6c1270, started on Thu Jul 18 16:33:54 CST 2019
+2019-07-18 16:33:57.003  INFO 104492 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-07-18 16:34:18.046  INFO 104304 --- [main] c.o.f.p.c.ParkingLotControllerTest       : Starting ParkingLotControllerTest on ZHA-ITA097-W10 with PID 104304 (started by XUCA6 in C:\Users\XUCA6\Desktop\Workspace\parkinglot)
+2019-07-18 16:34:18.167  INFO 104304 --- [main] c.o.f.p.c.ParkingLotControllerTest       : No active profile set, falling back to default profiles: default
+2019-07-18 16:34:18.187 DEBUG 104304 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@503ecb24
+2019-07-18 16:34:19.721 DEBUG 104304 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/**/favicon.ico] in 'faviconHandlerMapping'
+2019-07-18 16:34:19.969  INFO 104304 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-07-18 16:34:19.984 DEBUG 104304 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2019-07-18 16:34:20.053 DEBUG 104304 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 5 mappings in 'requestMappingHandlerMapping'
+2019-07-18 16:34:20.069 DEBUG 104304 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-07-18 16:34:20.085 DEBUG 104304 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2019-07-18 16:34:20.201  INFO 104304 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2019-07-18 16:34:20.201  INFO 104304 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2019-07-18 16:34:20.225  INFO 104304 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 24 ms
+2019-07-18 16:34:20.255  INFO 104304 --- [main] c.o.f.p.c.ParkingLotControllerTest       : Started ParkingLotControllerTest in 2.783 seconds (JVM running for 4.168)
+2019-07-18 16:34:20.326 DEBUG 104304 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to public org.springframework.http.ResponseEntity<org.springframework.data.domain.Page<com.oocl.fs.parkinglot.entity.ParkingLot>> com.oocl.fs.parkinglot.controller.ParkingLotController.list(java.lang.Integer,java.lang.Integer)
+2019-07-18 16:34:20.396 DEBUG 104304 --- [main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2019-07-18 16:34:20.396 DEBUG 104304 --- [main] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [Page 1 of 1 containing com.oocl.fs.parkinglot.entity.ParkingLot instances]
+2019-07-18 16:34:20.446 DEBUG 104304 --- [Thread-2] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@503ecb24, started on Thu Jul 18 16:34:18 CST 2019
+2019-07-18 16:34:20.446  INFO 104304 --- [Thread-2] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
