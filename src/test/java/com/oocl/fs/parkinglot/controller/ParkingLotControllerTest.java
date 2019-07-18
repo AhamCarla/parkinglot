@@ -1,5 +1,6 @@
 package com.oocl.fs.parkinglot.controller;
 
+import com.oocl.fs.parkinglot.entity.Order;
 import com.oocl.fs.parkinglot.entity.ParkingLot;
 import com.oocl.fs.parkinglot.service.ParkingLotService;
 import org.junit.jupiter.api.Test;
@@ -90,6 +91,31 @@ class ParkingLotControllerTest {
         ResultActions result = mvc.perform(put("/parking-lots/{id}", "AAAA").content("{}").contentType(MediaType.APPLICATION_JSON));
 
         result.andExpect(status().isOk()).andExpect(jsonPath("$.id", is("AAAA")));
+    }
+
+    @Test
+    void should_return_order_when_park_car() throws Exception {
+        Order order = new Order();
+        order.setCarNumber("AAAA");
+
+        when(parkingLotService.parkCar(any(), any())).thenReturn(order);
+
+        ResultActions result = mvc.perform(post("/parking-lots/{id}/order", "AAAA").content("{}").contentType(MediaType.APPLICATION_JSON));
+
+        result.andExpect(status().isOk()).andExpect(jsonPath("$.carNumber", is("AAAA")));
+
+    }
+
+    @Test
+    void should_return_order_when_fetch_car() throws Exception {
+        Order order = new Order();
+        order.setCarNumber("AAAA");
+
+        when(parkingLotService.fetchCar(any(), any())).thenReturn(order);
+
+        ResultActions result = mvc.perform(put("/parking-lots/{id}/order", "AAAA").content("{}").contentType(MediaType.APPLICATION_JSON));
+
+        result.andExpect(status().isOk()).andExpect(jsonPath("$.carNumber", is("AAAA")));
     }
 
 

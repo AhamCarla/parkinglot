@@ -44,21 +44,24 @@ public class ParkingLotService {
 
     public Order parkCar(String parkingLotId, Car car) {
         ParkingLot parkingLot = parkingLotRepository.getOne(parkingLotId);
-        Order order = new Order();
-        order.setCar(car);
-        order.setParkingLotName(parkingLot.getName());
+        if (parkingLot.isFull()) {
+            throw new RuntimeException("Not Enough Positions!");
+        }
+        Order order = new Order(parkingLot.getName(), car);
         parkingLot.getOrders().add(order);
-        return parkingLotRepository.save(parkingLot).getOrders().stream().filter(item -> item.getCar().equals(car)).collect(Collectors.toList()).get(0);
+        return parkingLotRepository.save(parkingLot).getOrders().stream().filter(item -> item.getCarNumber().equals(car.getCarNumber())).collect(Collectors.toList()).get(0);
     }
 
-    public void fetchCar(String parkingLotId, Car car) {
+    public Order fetchCar(String parkingLotId, Car car) {
         ParkingLot parkingLot = parkingLotRepository.getOne(parkingLotId);
-        Order order = parkingLot.getOrders().stream().filter(item -> item.getCar().equals(car)).collect(Collectors.toList()).get(0);
+        Order order = parkingLot.getOrders().stream().filter(item -> item.getCarNumber().equals(car.getCarNumber())).collect(Collectors.toList()).get(0);
         parkingLot.getOrders().remove(order);
         order.setStatus(false);
         order.setLeaveTime(new Date());
+        order.setCar(null);
         parkingLot.getOrders().add(order);
         parkingLotRepository.save(parkingLot);
+        return order;
     }
 
 

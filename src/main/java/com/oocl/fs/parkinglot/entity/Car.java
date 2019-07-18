@@ -17,7 +17,7 @@ public class Car {
     private String id;
 
     @Column(nullable = false)
-    private String cardNumber;
+    private String carNumber;
 
     public String getId() {
         return id;
@@ -27,12 +27,12 @@ public class Car {
         this.id = id;
     }
 
-    public String getCardNumber() {
-        return cardNumber;
+    public String getCarNumber() {
+        return carNumber;
     }
 
-    public void setCardNumber(String cardNumber) {
-        this.cardNumber = cardNumber;
+    public void setCarNumber(String carNumber) {
+        this.carNumber = carNumber;
     }
 
     @Override
@@ -41,11 +41,11 @@ public class Car {
         if (o == null || getClass() != o.getClass()) return false;
         Car car = (Car) o;
         return id.equals(car.id) &&
-                cardNumber.equals(car.cardNumber);
+                carNumber.equals(car.carNumber);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, cardNumber);
+        return Objects.hash(id, carNumber);
     }
 }

@@ -1,5 +1,6 @@
 package com.oocl.fs.parkinglot.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -81,6 +82,7 @@ public class ParkingLot {
         this.cars = cars;
     }
 
+    @JsonIgnore
     public Boolean isFull() {
         return cars.size() >= capacity;
     }

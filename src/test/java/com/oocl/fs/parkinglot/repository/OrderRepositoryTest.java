@@ -22,14 +22,14 @@ class OrderRepositoryTest {
     @Test
     void should_return_specify_order_when_find_order_by_card_number() {
         Car car = new Car();
-        car.setCardNumber("AAAAA");
+        car.setCarNumber("AAAAA");
         Order order = new Order();
         order.setCar(car);
-        order.setCardNumber(car.getCardNumber());
+        order.setCarNumber(car.getCarNumber());
         order.setParkingLotName("zha");
         orderRepository.save(order);
 
-        Order fetched = orderRepository.findByCardNumber("AAAAA");
+        Order fetched = orderRepository.findByCarNumber("AAAAA");
 
         assertEquals("zha", fetched.getParkingLotName());
     }

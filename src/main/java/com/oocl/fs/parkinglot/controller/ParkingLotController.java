@@ -1,5 +1,7 @@
 package com.oocl.fs.parkinglot.controller;
 
+import com.oocl.fs.parkinglot.entity.Car;
+import com.oocl.fs.parkinglot.entity.Order;
 import com.oocl.fs.parkinglot.entity.ParkingLot;
 import com.oocl.fs.parkinglot.service.ParkingLotService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +39,16 @@ public class ParkingLotController {
     @PutMapping("/parking-lots/{id}")
     public ResponseEntity<ParkingLot> update(@PathVariable String id, @RequestBody ParkingLot parkingLot) {
         return ResponseEntity.ok(parkingLotService.update(id, parkingLot));
+    }
+
+    @PostMapping("/parking-lots/{id}/order")
+    public ResponseEntity<Order> parkCar(@PathVariable String id, @RequestBody Car car) {
+        return ResponseEntity.ok(parkingLotService.parkCar(id, car));
+    }
+
+    @PutMapping("/parking-lots/{id}/order")
+    public ResponseEntity<Order> fetchCar(@PathVariable String id, @RequestBody Car car) {
+        return ResponseEntity.ok(parkingLotService.fetchCar(id, car));
     }
 
 }

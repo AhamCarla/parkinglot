@@ -27,11 +27,20 @@ public class Order {
     private Boolean status = true;
 
     @Column(nullable = false)
-    private String cardNumber;
+    private String carNumber;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "carId")
     private Car car;
+
+    public Order() {
+    }
+
+    public Order(String parkingLotName, Car car) {
+        this.parkingLotName = parkingLotName;
+        this.car = car;
+        this.carNumber = car.getCarNumber();
+    }
 
     public String getId() {
         return id;
@@ -81,11 +90,11 @@ public class Order {
         this.car = car;
     }
 
-    public String getCardNumber() {
-        return cardNumber;
+    public String getCarNumber() {
+        return carNumber;
     }
 
-    public void setCardNumber(String cardNumber) {
-        this.cardNumber = cardNumber;
+    public void setCarNumber(String carNumber) {
+        this.carNumber = carNumber;
     }
 }
